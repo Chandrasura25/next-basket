@@ -70,7 +70,20 @@ return [
             'block_for' => null,
             'after_commit' => false,
         ],
-
+        'rabbitmq' => [
+            'driver' => 'rabbitmq',
+            'host' => env('RABBITMQ_HOST'),
+            'port' => env('RABBITMQ_PORT', 5672),
+            'user' => env('RABBITMQ_USER'),
+            'password' => env('RABBITMQ_PASSWORD'),
+            'vhost' => env('RABBITMQ_VHOST', '/'),
+            'queue' => env('RABBITMQ_QUEUE'),
+            'options' => [
+                'ssl_options' => [
+                    'verify_peer' => false,
+                ],
+            ],
+        ],
     ],
 
     /*
